@@ -26,7 +26,7 @@ export default async function DashboardPage() {
     });
 
     // Transform for client
-    const projects = websites.map(site => {
+    const projects = websites.map((site: any) => {
         // Normalize URL to host for slug/display
         let displayDomain = site.url;
         try {
