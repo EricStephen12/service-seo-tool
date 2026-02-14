@@ -1,0 +1,153 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// NextAuth.js Models
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  accounts      Account[]
+  sessions      Session[]
+  websites      Website[]
+  fiverrGigs    FiverrGig[]
+  rankings      RankingHistory[]
+  
+  // Subscription fields (Paddle)
+  paddleCustomerId       String?   @unique
+  paddleSubscriptionId   String?   @unique
+  paddlePriceId          String?
+  paddleCurrentPeriodEnd DateTime?
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// SEO Tool Specific Models
+
+model Website {
+  id            String       @id @default(uuid())
+  userId        String
+  url           String
+  industry      String?
+  lastScanAt    DateTime?
+  lastScanScore Int?
+  createdAt     DateTime     @default(now())
+  
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  scans         ScanResult[]
+  rankings      RankingHistory[]
+  messages      Message[]
+}
+
+model ScanResult {
+  id         String   @id @default(uuid())
+  websiteId  String
+  score      Int
+  problems   Json     // Categorized problems
+  fixes      Json     // Suggested fixes
+  screenshot String?  // Base64 screenshot of homepage
+  reportMarkdown String? // Full RankMost Brain text report
+  scannedAt  DateTime @default(now())
+  
+  website    Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  websiteId String
+  role      String   // 'user' | 'assistant'
+  content   String   @db.Text
+  metadata  Json?    // For attachments like ReportCards
+  createdAt DateTime @default(now())
+
+  website   Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+}
+
+model FiverrGig {
+  id                 String        @id @default(uuid())
+  userId             String
+  gigUrl             String
+  category           String?
+  lastAnalysisAt     DateTime?
+  lastAnalysisScore  Int?
+  createdAt          DateTime      @default(now())
+  
+  user               User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  analyses           GigAnalysis[]
+  rankings           RankingHistory[]
+}
+
+model GigAnalysis {
+  id              String   @id @default(uuid())
+  gigId           String
+  currentData     Json     // Scraped details
+  optimizedData   Json     // AI generated improvements
+  competitionLevel String
+  analyzedAt      DateTime @default(now())
+  
+  gig             FiverrGig @relation(fields: [gigId], references: [id], onDelete: Cascade)
+}
+
+model RankingHistory {
+  id          String   @id @default(uuid())
+  userId      String
+  url         String
+  keyword     String
+  position    Int
+  date        DateTime @default(now()) @db.Date
+  
+  // Can be linked to either Website or FiverrGig
+  websiteId   String?
+  fiverrGigId String?
+  
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  website     Website?   @relation(fields: [websiteId], references: [id])
+  fiverrGig   FiverrGig? @relation(fields: [fiverrGigId], references: [id])
+
+  @@index([userId, date])
+}
