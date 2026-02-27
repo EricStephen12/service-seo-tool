@@ -7,15 +7,11 @@ import { Plus, Minus } from 'lucide-react';
 const faqs = [
     {
         q: "How does this differ from standard enterprise platforms?",
-        a: "Most tools are generalist platforms designed for everyone. RankMost is precision-engineered for Service Businesses and Fiverr Sellers. We strip away the enterprise bloat and focus 100% on the metrics that drive service revenue: Local POV, Gig Rankings, and Automated Technical Fixes."
+        a: "Most tools are generalist platforms designed for everyone. Exricx SEO is precision-engineered for Service Businesses and Local Brands. We perform a 50-page deep crawl to provide an honest, human-like assessment of what is actually stopping your customers from buying."
     },
     {
         q: "Do I need technical SEO knowledge?",
         a: "Zero. That is the purpose of our 'Auto-Fix Engine'. The system diagnoses the issue (e.g., 'Missing Schema') and generates the exact code or solution for you to copy-paste. It acts as your technical lead."
-    },
-    {
-        q: "Can I track Fiverr Gig rankings?",
-        a: "Yes. We are the only platform with a dedicated 'Gig Rank Tracker' that monitors your position in specific Fiverr categories and search terms, alerting you to market movements daily."
     },
     {
         q: "Is there a contract?",

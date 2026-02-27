@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { DashboardClient } from "./DashboardClient";
 
 export const metadata = {
-    title: "Command Center - RankMost",
+    title: "Command Center - Exricx SEO",
 };
 
 export default async function DashboardPage() {
@@ -17,17 +17,12 @@ export default async function DashboardPage() {
 
     // Fetch the user's projects
     const websites = await prisma.website.findMany({
-        where: {
-            userId: (session.user as any).id,
-        },
-        orderBy: {
-            createdAt: 'desc'
-        }
+        where: { userId: (session.user as any).id },
+        orderBy: { createdAt: 'desc' }
     });
 
     // Transform for client
-    const projects = websites.map((site: any) => {
-        // Normalize URL to host for slug/display
+    const websiteProjects = websites.map((site: any) => {
         let displayDomain = site.url;
         try {
             const urlObj = new URL(site.url.startsWith('http') ? site.url : `https://${site.url}`);
@@ -38,6 +33,7 @@ export default async function DashboardPage() {
 
         return {
             id: site.id,
+            type: 'website',
             domain: displayDomain,
             grade: site.lastScanScore ? (site.lastScanScore > 90 ? 'A' : site.lastScanScore > 80 ? 'B' : site.lastScanScore > 60 ? 'C' : 'D') : '-',
             rank: '#-',
@@ -46,5 +42,9 @@ export default async function DashboardPage() {
         };
     });
 
-    return <DashboardClient initialProjects={projects} />;
+    const projects = websiteProjects.sort((a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
+
+    return <DashboardClient initialProjects={projects as any} />;
 }

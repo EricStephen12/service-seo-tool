@@ -3,7 +3,7 @@ import { MobileHeader } from '@/components/dashboard/MobileHeader';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "RankMost | Project Center",
+    title: "Exricx SEO | Project Center",
     description: "High-fashion SEO intelligence.",
 };
 

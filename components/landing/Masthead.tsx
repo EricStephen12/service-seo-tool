@@ -30,7 +30,7 @@ export function Masthead() {
             <div className="couture-container w-full flex items-center justify-between">
                 <div className="flex items-center gap-12">
                     <Link href="/" className="font-serif italic font-bold text-3xl tracking-tighter hover:text-semrush-orange transition-colors">
-                        RankMost.
+                        Exricx SEO.
                     </Link>
                     <div className="hidden md:flex gap-8">
                         <Link href="#protocol" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-semrush-orange transition-colors">The Protocol</Link>

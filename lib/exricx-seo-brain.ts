@@ -7,7 +7,7 @@ const groq = new Groq({
 
 // --- PART 1: THE SYSTEM PROMPT GENERATOR ---
 const generateSystemPrompt = (pageData: any, context: any) => `
-You are RankMost — an elite SEO Veteran (30 years exp).
+You are Exricx SEO — an elite SEO Veteran (30 years exp).
 Your client is a **BUSINESS OWNER**, not a developer.
 They don't care about "H1 tags" or "Schema". They care about **CUSTOMERS** and **MONEY**.
 
@@ -75,7 +75,7 @@ They don't care about "H1 tags" or "Schema". They care about **CUSTOMERS** and *
 - Be the expensive consultant who tells the hard truth.
 `;
 
-export class RankMostBrain {
+export class ExricxSEOBrain {
 
     static async runAudit(pageData: CrawledPage, context: { competitorUrl?: string, competitorData?: any, businessContext?: string, auditType?: 'full' | 'quick', aggregatedContent?: string, visualAnalysis?: string, totalWordCount?: number, totalImages?: number, keywords?: any[] } = {}) {
 
@@ -167,7 +167,7 @@ Execute the 5-phase Veteran Protocol. Give EXACT fixes. Ban all generic advice. 
             return report;
 
         } catch (error) {
-            console.error("RankMost Brain Error:", error);
+            console.error("Exricx SEO Brain Error:", error);
             throw new Error("Failed to generate audit report");
         }
     }

@@ -21,7 +21,7 @@ export async function POST(req: Request) {
 
         if (exists) {
             if (!exists.password) {
-                // This is a "ghost" account from previous failed attempts
+                // This is a "ghost" account from previous failed attempts or OAuth
                 // We'll update it with the new password
                 const updatedUser = await prisma.user.update({
                     where: { email },

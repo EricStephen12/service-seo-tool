@@ -17,14 +17,14 @@ export function PlatformOverview() {
                             to win every <span className="italic luxury-underline">Search mission.</span>
                         </h2>
                         <p className="text-lg text-slate-600 font-light leading-relaxed mb-16 max-w-lg">
-                            RankMost Pro isn't just a tracking tool. It's an integrated SEO mission control that brings technical intelligence, content curation, and market dominance into a single, cohesive interface.
+                            Exricx SEO Pro is an integrated intelligence suite designed for service businesses and freelancers who need revenue, not just reports.
                         </p>
 
                         <div className="space-y-12">
                             {[
-                                { title: 'Technical Site Audit', desc: 'Fix your website with 50+ rigorous technical checks designed for high-end service businesses.', icon: Search },
-                                { title: 'AI Fix Engine', desc: 'Automate your growth. Our AI creates the actual technical fixes, from meta tags to image optimizations.', icon: Zap },
-                                { title: 'Position Tracking', desc: 'Command your market with daily ranking updates across Google and Fiverr categories.', icon: Target }
+                                { title: 'The Honest Audit', desc: 'Stop guessing. We identify the top 3 critical issues—like missing trust signals—that are actively killing your sales.', icon: Search },
+                                { title: 'Fiverr Gig Doctor', desc: 'Elite copywriting for your gigs. We generate titles and descriptions that actually convert clicks into orders.', icon: Zap },
+                                { title: 'Strategy Simulations', desc: 'Follow the "Zero to Hero" roadmap. AI-driven plays to scale your service from $0 to $10,000/month.', icon: Target }
                             ].map((feature, i) => (
                                 <div key={i} className="flex gap-10 items-start group">
                                     <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-border-light bg-cream-50 group-hover:bg-semrush-orange group-hover:text-white transition-all duration-500">

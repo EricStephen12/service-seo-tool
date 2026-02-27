@@ -24,8 +24,8 @@ const steps = [
         id: "03",
         title: "The Ascension",
         subtitle: "Domination",
-        desc: "You rise. Watch your business climb the results in real-time. No more guessing—just pure, clinical growth.",
-        detail: "Real-time Position Tracking",
+        desc: "You rise. Watch your authority climb as your technical health score stabilizes. No more guessing—just pure, clinical growth.",
+        detail: "Continuous Health Monitoring",
         image: "/journey_step_03_ascension_1770894136411.png"
     }
 ];

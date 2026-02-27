@@ -657,7 +657,7 @@ export default function ProjectDossierClient({ domain, data }: ProjectDossierCli
                         <div className="bg-white border border-black/10 p-8 md:p-12 font-serif">
                             <div className="flex justify-between items-center mb-8 border-b border-black/5 pb-8">
                                 <div>
-                                    <h2 className="text-3xl md:text-5xl italic mb-2">RankMost Intelligence</h2>
+                                    <h2 className="text-3xl md:text-5xl italic mb-2">Exricx SEO Intelligence</h2>
                                     <p className="text-xs text-fashion-gray uppercase tracking-widest">Master System Analysis</p>
                                 </div>
                                 <Terminal className="w-6 h-6 text-semrush-orange" />

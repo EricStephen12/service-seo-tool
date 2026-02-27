@@ -13,11 +13,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "RankMost Pro | Editorial SEO Intelligence",
+  title: "Exricx SEO Pro | Editorial SEO Intelligence",
   description: "A professional SEO workspace merging Semrush's power with sophisticated editorial design. Built for service businesses and Fiverr sellers.",
 };
 
 import { NotificationProvider } from "@/components/ui/Notification";
+import { AuthProvider } from "@/components/providers/SessionProvider";
+import { WhatsAppSupport } from "@/components/dashboard/WhatsAppSupport";
 
 export default function RootLayout({
   children,
@@ -27,9 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased text-[#101828]`}>
-        <NotificationProvider>
-          {children}
-        </NotificationProvider>
+        <AuthProvider>
+          <NotificationProvider>
+            {children}
+            <WhatsAppSupport />
+          </NotificationProvider>
+        </AuthProvider>
       </body>
     </html>
   );

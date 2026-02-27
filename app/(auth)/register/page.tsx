@@ -63,7 +63,7 @@ export default function SignUpPage() {
 
                     <div className="mb-12 text-center lg:text-left">
                         <Link href="/" className="font-serif italic font-bold text-2xl tracking-tighter mb-8 block lg:hidden">
-                            RankMost.
+                            Exricx SEO.
                         </Link>
                         <span className="text-[10px] font-bold uppercase tracking-widest text-semrush-orange mb-2 block">Application Protocol</span>
                         <h2 className="text-4xl font-serif italic text-fashion-black">Join the Agency</h2>
@@ -99,7 +99,7 @@ export default function SignUpPage() {
                                 <input
                                     type="email"
                                     className="w-full border-b border-black/10 py-2 text-lg font-serif outline-none focus:border-black transition-colors bg-transparent placeholder:text-black/20"
-                                    placeholder="editor@rankmost.com"
+                                    placeholder="editor@exricx.com"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     disabled={loading}

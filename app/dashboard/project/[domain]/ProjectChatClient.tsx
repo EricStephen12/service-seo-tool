@@ -42,7 +42,7 @@ export default function ProjectChatClient({ domain, data }: { domain: string, da
 
     const hasInitialized = useRef(false);
 
-    // Initial "Briefing" from RankMost (The Audit Report)
+    // Initial "Briefing" from Exricx SEO (The Audit Report)
     useEffect(() => {
         // We trigger this only on first load
         if (messages.length > 0 || hasInitialized.current) return;
@@ -203,7 +203,7 @@ export default function ProjectChatClient({ domain, data }: { domain: string, da
                         <span className="font-serif italic font-bold text-xl">R</span>
                     </div>
                     <div>
-                        <h1 className="font-serif italic text-lg leading-none">RankMost</h1>
+                        <h1 className="font-serif italic text-lg leading-none">Exricx SEO</h1>
                         <div className="flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                             <span className="text-[9px] uppercase tracking-widest opacity-40">Online • Senior Consultant</span>
@@ -364,7 +364,7 @@ export default function ProjectChatClient({ domain, data }: { domain: string, da
                             value={inputValue}
                             onChange={handleInput}
                             onKeyDown={handleKeyDown}
-                            placeholder="Ask RankMost anything..."
+                            placeholder="Ask Exricx SEO anything..."
                             className="flex-1 bg-transparent border-0 focus:ring-0 resize-none py-3 text-fashion-black placeholder:text-fashion-gray/50 max-h-32 text-sm md:text-base scrollbar-hide"
                             rows={1}
                         />
@@ -383,7 +383,7 @@ export default function ProjectChatClient({ domain, data }: { domain: string, da
 
                     <div className="text-center mt-3">
                         <p className="text-[9px] uppercase tracking-widest text-fashion-gray opacity-40">
-                            RankMost Brain v2.0 • Context Window: 15k Tokens • {domain}
+                            Exricx SEO Brain v2.0 • Context Window: 15k Tokens • {domain}
                         </p>
                     </div>
                 </div>

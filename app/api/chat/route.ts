@@ -19,7 +19,7 @@ export async function POST(req: Request) {
 
         // Honest System Prompt (No Fake Metrics)
         const systemPrompt = `
-        You are RankMost — a 30-year SEO veteran having a conversation with a business owner.
+        You are Exricx SEO — a 30-year SEO veteran having a conversation with a business owner.
         
         YOUR MISSION:
         Help them understand and fix the TOP 3 ISSUES stopping their website from getting customers.

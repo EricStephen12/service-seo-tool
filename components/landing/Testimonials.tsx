@@ -17,7 +17,7 @@ export function Testimonials() {
                             Expert Perspectives
                         </span>
                         <blockquote className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-navy-900 leading-snug mb-16">
-                            "I hate spreadsheets and I hate data dumps. RankMost is the first tool that actually speaks my language. I can see what's happening in 30 seconds, and I know exactly what to do next. It's the best investment I've made for my agency."
+                            "I hate spreadsheets and I hate data dumps. Exricx SEO is the first tool that actually speaks my language. I can see what's happening in 30 seconds, and I know exactly what to do next. It's the best investment I've made for my agency."
                         </blockquote>
                         <div className="flex flex-col items-center">
                             <div className="w-16 h-16 rounded-full bg-cream-50 mb-6 flex items-center justify-center font-bold text-navy-900 luxury-border">DM</div>

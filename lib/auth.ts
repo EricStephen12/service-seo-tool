@@ -41,9 +41,28 @@ export const authOptions: NextAuthOptions = {
         signIn: '/login',
     },
     callbacks: {
+        async jwt({ token, user, trigger, session }) {
+            if (user) {
+                token.id = user.id;
+                token.notifDailyBrief = (user as any).notifDailyBrief;
+                token.notifSecurity = (user as any).notifSecurity;
+                token.notifCompetitors = (user as any).notifCompetitors;
+            }
+            if (trigger === "update" && session?.user) {
+                token.name = session.user.name;
+                token.email = session.user.email;
+                if (session.user.notifDailyBrief !== undefined) token.notifDailyBrief = session.user.notifDailyBrief;
+                if (session.user.notifSecurity !== undefined) token.notifSecurity = session.user.notifSecurity;
+                if (session.user.notifCompetitors !== undefined) token.notifCompetitors = session.user.notifCompetitors;
+            }
+            return token;
+        },
         async session({ session, token }) {
             if (session.user) {
-                (session.user as any).id = token.sub;
+                (session.user as any).id = token.id;
+                (session.user as any).notifDailyBrief = token.notifDailyBrief;
+                (session.user as any).notifSecurity = token.notifSecurity;
+                (session.user as any).notifCompetitors = token.notifCompetitors;
             }
             return session;
         }

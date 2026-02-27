@@ -8,9 +8,6 @@ import { Home, BarChart2, Globe, Settings, Plus, LogOut, Grid, Zap } from 'lucid
 
 const menuItems = [
     { icon: Grid, label: "Projects", href: "/dashboard" },
-    { icon: Zap, label: "Gig Optimizer", href: "/dashboard/gigs" },
-    { icon: Globe, label: "Intelligence", href: "/dashboard/intelligence" },
-    { icon: BarChart2, label: "Rankings", href: "/dashboard/rankings" },
     { icon: Settings, label: "Settings", href: "/dashboard/settings" },
     { icon: LogOut, label: "Billing", href: "/pricing" },
 ];
@@ -38,7 +35,7 @@ export function Sidebar() {
                     animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : -20 }}
                     className="ml-12 font-serif font-light tracking-widest text-xs whitespace-nowrap"
                 >
-                    RANKMOST INTELLIGENCE
+                    EXRICX SEO INTELLIGENCE
                 </motion.span>
             </div>
 

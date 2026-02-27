@@ -9,7 +9,7 @@ import { discoverKeywords } from '@/lib/seo-analyzer/keyword-discovery';
 import { getGoogleRanking, getTopCompetitor } from '@/lib/tracker/google-search';
 import { rateLimit } from '@/lib/rate-limit';
 import { handleApiError, AppError } from '@/lib/error-handler';
-import { RankMostBrain } from '@/lib/rankmost-brain';
+import { ExricxSEOBrain } from '@/lib/exricx-seo-brain';
 
 export async function POST(req: NextRequest) {
     try {
@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
             // 2. Keyword Discovery (Run BEFORE Brain so we can feed it data)
             discoveredKeywords = await discoverKeywords(crawledPages);
 
-            masterReport = await RankMostBrain.runAudit(crawledPages[0], {
+            masterReport = await ExricxSEOBrain.runAudit(crawledPages[0], {
                 auditType: auditType as 'full' | 'quick',
                 aggregatedContent: aggregatedContent,
                 competitorData: competitorData,

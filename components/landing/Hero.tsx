@@ -68,7 +68,7 @@ export function Hero() {
                     className="mb-8 md:mb-12 flex justify-center items-center gap-4"
                 >
                     <div className="h-[1px] w-8 bg-semrush-orange" />
-                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-semrush-orange">The Authority Issue</span>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-semrush-orange">The Honesty Protocol</span>
                     <div className="h-[1px] w-8 bg-semrush-orange" />
                 </motion.div>
 
@@ -80,7 +80,7 @@ export function Hero() {
                     className="text-center mb-8"
                 >
                     <span className="text-6xl md:text-[8rem] font-serif italic leading-tight text-fashion-black tracking-tighter">
-                        RankMost.
+                        Exricx SEO.
                     </span>
                 </motion.h1>
 
@@ -91,7 +91,8 @@ export function Hero() {
                     transition={{ duration: 1, delay: 0.6 }}
                     className="mt-8 md:mt-12 max-w-xl mx-auto text-base md:text-xl font-light text-fashion-gray leading-relaxed mb-12 md:mb-20 px-4"
                 >
-                    Algorithm precision. High-fashion prestige. <br className="hidden md:block" /> Effortless search dominance.
+                    Stop losing authority to silent technical errors. <br className="hidden md:block" />
+                    We diagnose your domain and generate clinical SEO corrections.
                 </motion.p>
 
                 {/* HIGH VISIBILITY COMMAND BAR - MOBILE OPTIMIZED */}
@@ -99,7 +100,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.8 }}
-                    className="max-w-2xl mx-auto relative group w-full"
+                    className="max-w-xl mx-auto relative group w-full"
                 >
                     <div className="flex flex-col md:flex-row items-center gap-4 bg-fashion-light p-4 md:p-2 md:pr-2 rounded-3xl md:rounded-full border border-black/5 hover:border-black/20 transition-colors shadow-2xl shadow-black/5">
                         <div className="flex-1 w-full md:pl-8 text-left">
@@ -115,7 +116,7 @@ export function Hero() {
                         </div>
                         <button
                             onClick={handleAnalyze}
-                            className="w-full md:w-auto px-8 py-4 md:px-10 md:py-5 bg-fashion-navy text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-semrush-orange transition-colors rounded-xl md:rounded-full shadow-lg whitespace-nowrap"
+                            className="w-full md:w-auto px-10 py-4 md:px-12 md:py-5 bg-fashion-navy text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-semrush-orange transition-colors rounded-xl md:rounded-full shadow-lg whitespace-nowrap"
                         >
                             Analyze
                         </button>

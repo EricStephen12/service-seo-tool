@@ -56,7 +56,7 @@ export default function SignInPage() {
                         transition={{ delay: 0.2, duration: 1 }}
                     >
                         <span className="text-xs font-bold uppercase tracking-[0.4em] mb-4 block">The Agency</span>
-                        <h1 className="text-display-large font-serif italic mb-6">RankMost.</h1>
+                        <h1 className="text-display-large font-serif italic mb-6">Exricx SEO.</h1>
                         <p className="font-light text-xl opacity-80 max-w-md mx-auto leading-relaxed">
                             "Intelligence is the ultimate luxury."<br />
                             Access your dashboard to view the latest market movements.
@@ -75,7 +75,7 @@ export default function SignInPage() {
 
                     <div className="mb-12 text-center lg:text-left">
                         <Link href="/" className="font-serif italic font-bold text-2xl tracking-tighter mb-8 block lg:hidden">
-                            RankMost.
+                            Exricx SEO.
                         </Link>
                         <span className="text-[10px] font-bold uppercase tracking-widest text-semrush-orange mb-2 block">Restricted Access</span>
                         <h2 className="text-4xl font-serif italic text-fashion-black">Member Login</h2>
@@ -115,7 +115,7 @@ export default function SignInPage() {
                                 <input
                                     type="email"
                                     className="w-full border-b border-black/10 py-2 text-lg font-serif outline-none focus:border-black transition-colors bg-transparent placeholder:text-black/20"
-                                    placeholder="editor@rankmost.com"
+                                    placeholder="editor@exricx.com"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     disabled={loading}

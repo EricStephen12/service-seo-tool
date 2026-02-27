@@ -163,7 +163,7 @@ async function crawlPage(browser: Browser, url: string, baseUrl: string, capture
                 }))
                 .filter(img => img.width > 50 && img.height > 50);
 
-            // --- RankMost Master System Extraction ---
+            // --- Exricx SEO Master System Extraction ---
 
             // 1. Trust Signals
             const hasPrivacy = links.some(l => l.toLowerCase().includes('privacy'));

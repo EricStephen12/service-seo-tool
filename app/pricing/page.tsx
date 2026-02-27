@@ -2,50 +2,51 @@
 
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 const tiers = [
     {
-        name: "The Specialist",
-        price: "15",
-        description: "For individual service providers aiming for local dominance.",
+        name: "The Clinical",
+        price: "3",
+        description: "Surgical precision for your flagship domain.",
         features: [
-            "3 Active Projects",
-            "Daily Rank Tracking",
-            "Fiverr Gig Optimization",
-            "Bi-Weekly Site Audits",
-            "Professional PDF Briefings"
+            "1 Active Website Audit",
+            "AI Correction Engine",
+            "Trust Signal Validation",
+            "Metadata Surgical Fixes",
+            "Mobile Ready Check"
         ]
     },
     {
-        name: "The Agency",
-        price: "39",
-        description: "For teams managing a portfolio of high-value clients.",
+        name: "The Surgical",
+        price: "12",
+        description: "Elite intelligence for growing digital portfolios.",
         featured: true,
         features: [
-            "Unlimited Projects",
-            "Real-time Intelligence",
-            "Competitor Market Sensors",
-            "Full API Access",
-            "Priority Technical Support",
-            "White-label Dossiers"
+            "5 Active Website Audits",
+            "Deep Rival Recon",
+            "Keyword Discovery Suite",
+            "Priority Audit Speed",
+            "Weekly Health Snapshots"
         ]
     },
     {
-        name: "The Enterprise",
-        price: "Custom",
-        description: "Architectural solutions for large-scale operations.",
+        name: "The Intelligence",
+        price: "49",
+        description: "Full scale intelligence for modern digital estates.",
         features: [
-            "Custom Data Modeling",
-            "Dedicated Strategist",
-            "Advanced Global Tracking",
-            "Custom Webhooks",
-            "Enterprise Grade Security"
+            "50 Active Projects",
+            "White-label Reports",
+            "Custom Schema Modeling",
+            "Link Architecture Audit",
+            "24/7 Security Monitoring"
         ]
     }
 ];
 
 export default function PricingPage() {
+    const { data: session } = useSession();
+
     return (
         <div className="min-h-screen bg-fashion-white pt-32 pb-20 couture-container">
 
@@ -76,8 +77,8 @@ export default function PricingPage() {
 
                         <span className="text-label opacity-40 mb-12 block">{tier.name}</span>
                         <div className="mb-8 flex items-baseline gap-2">
-                            <span className="text-6xl font-serif italic">{tier.price === 'Custom' ? '' : '$'}{tier.price}</span>
-                            {tier.price !== 'Custom' && <span className="text-sm font-light text-fashion-gray tracking-widest uppercase">/ Month</span>}
+                            <span className="text-6xl font-serif italic">${tier.price}</span>
+                            <span className="text-sm font-light text-fashion-gray tracking-widest uppercase">/ Month</span>
                         </div>
 
                         <p className="text-sm font-light text-fashion-gray h-16 italic mb-12">
@@ -93,15 +94,22 @@ export default function PricingPage() {
                             ))}
                         </div>
 
-                        <Link
-                            href="/register"
+                        <button
+                            onClick={() => {
+                                if (!session) {
+                                    window.location.href = '/register';
+                                } else {
+                                    alert(`Initializing ${tier.name} Protocol... Transferring to Secure Checkout.`);
+                                    window.location.href = '/dashboard/settings';
+                                }
+                            }}
                             className={`block w-full text-center py-5 text-[10px] font-bold uppercase tracking-[0.3em] transition-all ${tier.featured
                                 ? 'bg-black text-white hover:bg-semrush-orange hover:border-semrush-orange border border-black'
                                 : 'border border-black text-black hover:bg-black hover:text-white'
                                 }`}
                         >
-                            Initiate Protocol
-                        </Link>
+                            {session ? 'Initialize Protocol' : 'Initiate Protocol'}
+                        </button>
                     </motion.div>
                 ))}
             </div>
@@ -109,7 +117,7 @@ export default function PricingPage() {
             {/* Trust Quote */}
             <div className="mt-40 text-center max-w-2xl mx-auto border-t border-black/5 pt-20">
                 <p className="text-2xl font-serif italic mb-8 leading-relaxed">
-                    "RankMost isn't just a tool; it's the architectural foundation of our search presence."
+                    "Exricx SEO isn't just a tool; it's the architectural foundation of our search presence."
                 </p>
                 <span className="text-label opacity-40">— The Gallery NYC</span>
             </div>

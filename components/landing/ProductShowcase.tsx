@@ -57,8 +57,8 @@ export function ProductShowcase() {
                                 {/* Header */}
                                 <div className="flex justify-between items-center mb-12">
                                     <div>
-                                        <h3 className="text-3xl font-serif italic text-fashion-black">Project: Vogue International</h3>
-                                        <p className="text-xs uppercase tracking-widest text-fashion-gray mt-2">Global SEO Campaign • A/W 2026</p>
+                                        <h3 className="text-3xl font-serif italic text-fashion-black">Project: Precision Plumbing</h3>
+                                        <p className="text-xs uppercase tracking-widest text-fashion-gray mt-2">Dossier: Service Revenue Optimization • S/S 2026</p>
                                     </div>
                                     <div className="w-12 h-12 rounded-full border border-black/10" />
                                 </div>
@@ -68,7 +68,7 @@ export function ProductShowcase() {
 
                                     {/* Card 1: Authority Score */}
                                     <div className="bg-white p-8 rounded-none border border-black/5 shadow-sm hover:shadow-lg transition-shadow">
-                                        <span className="text-xs uppercase tracking-widest text-fashion-gray block mb-4">Authority Score</span>
+                                        <span className="text-xs uppercase tracking-widest text-fashion-gray block mb-4">Conversion Score</span>
                                         <div className="flex items-baseline gap-2">
                                             <span className="text-6xl font-serif text-fashion-black">92</span>
                                             <span className="text-sm text-green-500 font-bold">▲ 4%</span>
@@ -84,7 +84,7 @@ export function ProductShowcase() {
                                     {/* Card 2: Health */}
                                     <div className="bg-fashion-navy text-white p-8 rounded-none shadow-xl col-span-1 md:col-span-2 relative overflow-hidden">
                                         <div className="relative z-10">
-                                            <span className="text-xs uppercase tracking-widest text-white/60 block mb-4">Site Health</span>
+                                            <span className="text-xs uppercase tracking-widest text-white/60 block mb-4">Revenue Risk</span>
                                             <div className="flex justify-between items-end">
                                                 <span className="text-8xl font-serif italic">A+</span>
                                                 <div className="text-right">
@@ -122,10 +122,10 @@ export function ProductShowcase() {
                                     transition={{ delay: 1, duration: 0.8 }}
                                     className="absolute bottom-12 right-12 bg-white p-6 shadow-2xl border-l-4 border-semrush-orange max-w-xs z-20"
                                 >
-                                    <span className="text-[10px] uppercase font-bold text-semrush-orange mb-2 block">Auto-Fix Engine</span>
+                                    <span className="text-[10px] uppercase font-bold text-semrush-orange mb-2 block">SEO Brain Intelligence</span>
                                     <p className="text-sm font-serif">
-                                        <span className="italic">"Optimization Complete."</span> <br />
-                                        Fixed 3 broken links in /collections.
+                                        <span className="italic">"Optimization Ready."</span> <br />
+                                        Found structural leaks in your Sitemap. Auto-correction protocol generated.
                                     </p>
                                 </motion.div>
 

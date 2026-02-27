@@ -5,7 +5,7 @@ import { redirect, notFound } from "next/navigation";
 import ProjectChatClient from "./ProjectChatClient";
 
 export const metadata = {
-    title: "Project Dossier - RankMost",
+    title: "Project Dossier - Exricx SEO",
 };
 
 export default async function ProjectPage({ params }: { params: { domain: string } }) {

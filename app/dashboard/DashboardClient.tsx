@@ -10,6 +10,7 @@ import { DecisionModal } from '@/components/ui/DecisionModal';
 
 interface Project {
     id: string;
+    type?: 'website';
     domain: string;
     grade: string;
     rank: string;
@@ -37,7 +38,7 @@ export function DashboardClient({ initialProjects }: { initialProjects: Project[
     const [projects, setProjects] = useState<Project[]>(initialProjects);
     const [deletingId, setDeletingId] = useState<string | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [projectToDelete, setProjectToDelete] = useState<{ domain: string, id: string } | null>(null);
+    const [projectToDelete, setProjectToDelete] = useState<{ domain: string, id: string, type?: 'website' } | null>(null);
 
     // Sync state with props
     useEffect(() => {
@@ -95,8 +96,8 @@ export function DashboardClient({ initialProjects }: { initialProjects: Project[
         }
     };
 
-    const handleInitiateDelete = (domain: string, id: string) => {
-        setProjectToDelete({ domain, id });
+    const handleInitiateDelete = (domain: string, id: string, type?: 'website') => {
+        setProjectToDelete({ domain, id, type });
         setIsModalOpen(true);
     };
 
@@ -108,7 +109,9 @@ export function DashboardClient({ initialProjects }: { initialProjects: Project[
         setIsModalOpen(false);
 
         try {
-            const res = await fetch(`/api/project/${encodeURIComponent(domain)}`, {
+            const apiPath = `/api/project/${encodeURIComponent(domain)}`;
+
+            const res = await fetch(apiPath, {
                 method: 'DELETE',
             });
 
@@ -172,7 +175,7 @@ export function DashboardClient({ initialProjects }: { initialProjects: Project[
                                         <div className="w-3 h-3 rounded-full bg-yellow-500" />
                                         <div className="w-3 h-3 rounded-full bg-green-500" />
                                     </div>
-                                    <span className="text-[10px] uppercase tracking-widest opacity-50">RankMost Intelligence Node v2.0</span>
+                                    <span className="text-[10px] uppercase tracking-widest opacity-50">Exricx SEO Intelligence Node v2.0</span>
                                 </div>
 
                                 {/* Terminal Body */}
@@ -314,7 +317,7 @@ export function DashboardClient({ initialProjects }: { initialProjects: Project[
                                     onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();
-                                        handleInitiateDelete(project.domain, project.id);
+                                        handleInitiateDelete(project.domain, project.id, project.type);
                                     }}
                                     className="text-fashion-gray hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
                                 >
@@ -324,7 +327,10 @@ export function DashboardClient({ initialProjects }: { initialProjects: Project[
                             </div>
                         </div>
 
-                        <Link href={`/dashboard/project/${project.domain}`} className="flex-1 flex flex-col justify-center">
+                        <Link
+                            href={`/dashboard/project/${project.domain}`}
+                            className="flex-1 flex flex-col justify-center"
+                        >
                             <div className="text-center">
                                 <h3 className="text-2xl font-serif italic mb-2 group-hover:text-semrush-orange transition-colors truncate max-w-full">
                                     {project.domain}
@@ -348,13 +354,10 @@ export function DashboardClient({ initialProjects }: { initialProjects: Project[
                         </div>
 
                         <button
-                            onClick={(e) => {
-                                e.preventDefault();
-                                alert("Generating Professional PDF Briefing... [Mock]");
-                            }}
-                            className="mt-8 py-3 border border-black/5 text-[8px] font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all text-center"
+                            disabled
+                            className="mt-8 py-3 border border-black/5 text-[8px] font-bold uppercase tracking-[0.2em] opacity-40 cursor-not-allowed text-center"
                         >
-                            Export Dossier (PDF)
+                            Export Dossier (Planned for 2026)
                         </button>
                     </motion.div>
                 ))}

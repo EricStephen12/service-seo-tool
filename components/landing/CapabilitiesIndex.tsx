@@ -10,34 +10,34 @@ const capabilities = [
             { name: "Site Audit", desc: "50+ point technical health check." },
             { name: "Auto-Fix Engine", desc: "AI-driven correction protocols." },
             { name: "Core Web Vitals", desc: "Real-time performance metrics." },
-            { name: "HTTPS Checker", desc: "Security protocol validation." }
+            { name: "HTTPS Security", desc: "Encryption & protocol validation." }
         ]
     },
     {
-        category: "02 — Search Intel",
+        category: "02 — Conversion Intel",
         tools: [
-            { name: "Keyword Discovery", desc: "AI-driven intent extraction." },
-            { name: "Trust Signal Fix", desc: "AI About Us & NAP generation." },
-            { name: "Organic Pulse", desc: "Live search performance data." },
-            { name: "Competitor Audit", desc: "Structural rival analysis." }
+            { name: "Keyword Discovery", desc: "AI-driven search intent extraction." },
+            { name: "Trust Validation", desc: "NAP & structural authority checks." },
+            { name: "Selling Narratives", desc: "AI-driven page content rewriting." },
+            { name: "Rival Recon", desc: "Structural competitor audit." }
         ]
     },
     {
-        category: "03 — Rank Tracking",
+        category: "03 — Visibility & Ranks",
         tools: [
-            { name: "Position Tracking", desc: "Daily Google desktop & mobile." },
-            { name: "Fiverr Ranker", desc: "Marketplace visibility tracking." },
-            { name: "Volatility Alerts", desc: "Coming Soon - Q3 2026." },
-            { name: "Maps Tracker", desc: "Coming Soon - Q3 2026." }
+            { name: "Position Tracker", desc: "Google Desktop & Mobile tracking." },
+            { name: "Search Authority", desc: "Domain-wide visibility monitoring." },
+            { name: "Volatility Radar", desc: "Planned — Deployment Q3 2026." },
+            { name: "Local Maps", desc: "Planned — Deployment Q4 2026." }
         ]
     },
     {
-        category: "04 — Market Experts",
+        category: "04 — Engineering Suite",
         tools: [
-            { name: "Fiverr Scraper", desc: "Real-time gig benchmarker." },
-            { name: "Saturation Index", desc: "Category density analytics." },
-            { name: "Buyer Narratives", desc: "AI Gig description optimizer." },
-            { name: "Tag Strategy", desc: "Search intent tag generator." }
+            { name: "Schema Generator", desc: "AI-driven JSON-LD structural data." },
+            { name: "Link Architect", desc: "Internal linking map & audit." },
+            { name: "Metadata Forge", desc: "Surgical Title & Meta description fix." },
+            { name: "Alt-Text Recon", desc: "Accessibility & image SEO check." }
         ]
     }
 ];
@@ -56,7 +56,7 @@ export function CapabilitiesIndex() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">
                     {capabilities.map((cat, i) => (
                         <div key={i} className="flex flex-col">
                             <span className="text-[10px] font-bold uppercase tracking-widest border-b border-black text-fashion-black pb-4 mb-8">

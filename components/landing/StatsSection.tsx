@@ -18,9 +18,9 @@ export function VisualEvidence() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black/5 border border-black/5">
                     {[
-                        { val: "300%", label: "Avg. Traffic Increase", sub: "Within 90 Days" },
-                        { val: "#1", label: "Rankings Achieved", sub: "For 12k+ Keywords" },
-                        { val: "40hr", label: "Saved Monthly", sub: "Via Auto-Fix AI" }
+                        { val: "50+", label: "Technical Checks", sub: "Comprehensive Audit Depth" },
+                        { val: "10s", label: "Diagnosis Speed", sub: "Real-time AI Analysis" },
+                        { val: "100%", label: "Copy-Paste Fixes", sub: "No-Code Implementation" }
                     ].map((stat, i) => (
                         <motion.div
                             key={i}
@@ -45,7 +45,7 @@ export function VisualEvidence() {
                     <div className="text-center max-w-4xl mx-auto">
                         <span className="text-9xl font-serif leading-none opacity-10">"</span>
                         <p className="text-3xl md:text-5xl font-serif italic leading-tight -mt-12">
-                            We spent years guessing why our phone wasn't ringing. RankMost showed us exactly where we were losing—and helped us fix it in an afternoon. Our call volume has never been higher.
+                            We spent years guessing why our phone wasn't ringing. Exricx SEO showed us exactly where we were losing—and helped us fix it in an afternoon. Our call volume has never been higher.
                         </p>
                         <div className="mt-12 flex flex-col items-center">
                             <span className="text-label font-bold">Alexander V.</span>

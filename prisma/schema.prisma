@@ -57,6 +57,11 @@ model User {
   paddleSubscriptionId   String?   @unique
   paddlePriceId          String?
   paddleCurrentPeriodEnd DateTime?
+
+  // Notification Preferences
+  notifDailyBrief   Boolean @default(true)
+  notifSecurity    Boolean @default(true)
+  notifCompetitors Boolean @default(true)
 }
 
 model VerificationToken {
@@ -91,7 +96,7 @@ model ScanResult {
   problems   Json     // Categorized problems
   fixes      Json     // Suggested fixes
   screenshot String?  // Base64 screenshot of homepage
-  reportMarkdown String? // Full RankMost Brain text report
+  reportMarkdown String? // Full Exricx SEO Brain text report
   scannedAt  DateTime @default(now())
   
   website    Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
